@@ -7,7 +7,7 @@ class TestModel(models.Model):
     name = fields.Char(string='Nombre')
     description = fields.Text(string='Descripción')
     postcode = fields.Char(string='Código Postal')
-    date_availability = fields.Date(string='Fecha de Disponibilidad')
+    date_availability = fields.Date(string='Fecha de Disponibilidad',default=fields.Datetime.now)
     expected_price = fields.Float(string='Precio Esperado')
     selling_price = fields.Float(string='Precio de Venta')
     bedrooms = fields.Integer(string='Número de Habitaciones',default=2)
@@ -22,6 +22,7 @@ class TestModel(models.Model):
         ('west', 'Oeste')
     ], string='Orientación del Jardín')
     status = fields.Selection([
-        ('')
+        ('Nuevo'),
+        ('Usado?')
     ])
 
