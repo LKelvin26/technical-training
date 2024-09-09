@@ -6,6 +6,10 @@ class TestModel(models.Model):
     _name = 'test.model'
     _description = 'Reservación de Hotel'
 
+    def action_confirm_reservation(self):
+        for record in self:
+            record.status = 'confirmed'
+            
     name = fields.Char(string='Nombre del Cliente', required=True)
     description = fields.Text(string='Notas Adicionales')
     date_reservation = fields.Date(string='Fecha de la Reserva', default=fields.Datetime.now, required=True)
