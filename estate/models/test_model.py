@@ -10,7 +10,7 @@ class TestModel(models.Model):
     date_availability = fields.Date(string='Fecha de Disponibilidad')
     expected_price = fields.Float(string='Precio Esperado')
     selling_price = fields.Float(string='Precio de Venta')
-    bedrooms = fields.Integer(string='Número de Habitaciones')
+    bedrooms = fields.Integer(string='Número de Habitaciones',default=2)
     living_area = fields.Integer(string='Área de Estar')
     facades = fields.Integer(string='Número de Fachadas')
     garage = fields.Boolean(string='Garage')
@@ -21,4 +21,7 @@ class TestModel(models.Model):
         ('east', 'Este'),
         ('west', 'Oeste')
     ], string='Orientación del Jardín')
+    status = fields.Selection([
+        ('')
+    ])
 
