@@ -4,9 +4,13 @@
         <field name="res_model">test.model</field>
         <field name="view_mode">tree,form</field>
     </record>  
-    <menuitem id="test_menu_root" name="Test">
-        <menuitem id="test_first_level_menu" name="First Level">
-            <menuitem id="test_model_menu_action" action="test_model_action"/>
-        </menuitem>
-    </menuitem>
+
+    <!-- Menú raíz -->
+    <menuitem id="test_menu_root" name="Test"/>
+
+    <!-- Primer nivel -->
+    <menuitem id="test_first_level_menu" name="First Level" parent="test_menu_root"/>
+
+    <!-- Acción del modelo -->
+    <menuitem id="test_model_menu_action" action="test_model_action" parent="test_first_level_menu"/>
 </odoo>
