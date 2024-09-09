@@ -4,7 +4,9 @@
     "application": True,  # This line says the module is an App, and not a module
     "depends": ["base"],  # dependencies
     "data": [
+        'views/mi_modelo_view.xml'
     ],
     "installable": True,
+    'application': True,
     'license': 'LGPL-3',
 }
