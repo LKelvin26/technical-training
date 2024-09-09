@@ -1,7 +1,7 @@
 from odoo import models, fields
 
-class MiModelo(models.Model):
-    _name = 'mi.modelo'
+class TestModel(models.Model):
+    _name = 'test_model'
     _description = 'Descripción de Mi Modelo'
 
     name = fields.Char(string='Nombre')
