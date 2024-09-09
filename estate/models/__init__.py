@@ -1,1 +1,1 @@
-from . import TestModel
+from . import test_model
