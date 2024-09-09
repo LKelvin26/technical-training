@@ -2,16 +2,41 @@
     <record id="test_model_action" model="ir.actions.act_window">
         <field name="name">Test action</field>
         <field name="res_model">test.model</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+
+        
     </record>  
 
-    <!-- Menú raíz -->
-    <menuitem id="test_menu_root" name="Test"/>
+     <!-- Vista de formulario -->
+    <record id="view_test_model_form" model="ir.ui.view">
+        <field name="name">test.model.form</field>
+        <field name="model">test.model</field>
+        <field name="arch" type="xml">
+            <form string="Test Model">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="postcode"/>
+                        <field name="date_availability"/>
+                        <field name="expected_price"/>
+                        <field name="selling_price"/>
+                    </group>
+                    <group>
+                        <field name="bedrooms"/>
+                        <field name="living_area"/>
+                        <field name="facades"/>
+                        <field name="garage"/>
+                        <field name="garden_area"/>
+                        <field name="garden_orientation"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-    <!-- Primer nivel -->
-    <menuitem id="test_first_level_menu" name="First Level" parent="test_menu_root">
-        <menuitem id="test_model_menu_action" action="test_model_action"/>
-    </menuitem>
-    <!-- Acción del modelo -->
-    <menuitem id="test_model_menu_action" action="test_model_action" parent="test_first_level_menu"/>
+    <!-- Menú para acceder al formulario -->
+    <menuitem id="test_menu_root" name="Test"/>
+    <menuitem id="test_model_menu_form" parent="test_menu_root" name="Formulario Test Model" action="action_test_model_form"/>
 </odoo>
