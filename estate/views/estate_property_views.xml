@@ -29,6 +29,7 @@
                         <field name="garage"/>
                         <field name="garden_area"/>
                         <field name="garden_orientation"/>
+                        <field name="status"/>
                     </group>
                 </sheet>
             </form>
