@@ -22,10 +22,10 @@ class TestModel(models.Model):
         ('west', 'Oeste')
     ], string='Orientación del Jardín')
     status = fields.Selection([
-        ('New'),
-        ('Offer Received'),
-        ('Offer Accepted'),
-        ('Sold'),
-        ('Canceled')
+        ('New',"nuevo"),
+        ('Offer Received',"oferta recibida"),
+        ('Offer Accepted',"oferta aceptada"),
+        ('Sold',"vendida"),
+        ('Canceled',"cancelada")
     ], string='Orientación del Jardín')
 
