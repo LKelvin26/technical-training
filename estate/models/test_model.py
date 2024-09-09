@@ -1,23 +1,31 @@
 from odoo import models, fields
 
-from odoo import models, fields
-
 class TestModel(models.Model):
     _name = 'test.model'
-    _description = 'Reservación de Hotel'
+    _description = 'Descripción de Mi Modelo'
 
-    def action_confirm_reservation(self):
-        for record in self:
-            record.status = 'confirmed'
-            
-    name = fields.Char(string='Nombre del Cliente', required=True)
-    description = fields.Text(string='Notas Adicionales')
-    date_reservation = fields.Date(string='Fecha de la Reserva', default=fields.Datetime.now, required=True)
-    expected_price = fields.Float(string='Precio Estimado', required=True)
-    selling_price = fields.Float(string='Precio Final', required=True)
-    bedrooms = fields.Integer(string='Número de Habitaciones', default=1, required=True)
+    name = fields.Char(string='Nombre')
+    description = fields.Text(string='Descripción')
+    postcode = fields.Char(string='Código Postal')
+    date_availability = fields.Date(string='Fecha de Disponibilidad',default=fields.Datetime.now)
+    expected_price = fields.Float(string='Precio Esperado')
+    selling_price = fields.Float(string='Precio de Venta')
+    bedrooms = fields.Integer(string='Número de Habitaciones',default=2)
+    living_area = fields.Integer(string='Área de Estar')
+    facades = fields.Integer(string='Número de Fachadas')
+    garage = fields.Boolean(string='Garage')
+    garden_area = fields.Integer(string='Área del Jardín')
+    garden_orientation = fields.Selection([
+        ('north', 'Norte'),
+        ('south', 'Sur'),
+        ('east', 'Este'),
+        ('west', 'Oeste')
+    ], string='Orientación del Jardín')
     status = fields.Selection([
-        ('new', 'Nueva'),
-        ('confirmed', 'Confirmada'),
-        ('canceled', 'Cancelada'),
-    ], string='Estatus de la Reservación', required=True, default='new', copy=False)
+        ('New',"nuevo"),
+        ('Offer Received',"oferta recibida"),
+        ('Offer Accepted',"oferta aceptada"),
+        ('Sold',"vendida"),
+        ('Canceled',"cancelada")
+    ], string='Estatus', required=True, default='new', copy=False)
+
