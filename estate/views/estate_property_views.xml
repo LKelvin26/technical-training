@@ -1,5 +1,4 @@
 <odoo>
-    
     <!-- Vista de lista para estate.property -->
     <record id="view_estate_property_tree" model="ir.ui.view">
         <field name="name">estate.property.tree</field>
@@ -53,6 +52,8 @@
         <field name="name">Real Estate Properties</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
+        <!-- Añadir estas líneas para definir qué vistas se usan en la acción -->
+        <field name="view_id" ref="view_estate_property_tree"/>
+        <field name="views" eval="[(ref('view_estate_property_tree'), 'tree'), (ref('view_estate_property_form'), 'form')]"/>
     </record>
-
 </odoo>
