@@ -1,24 +1,40 @@
 <odoo>
-    <!-- Vista de búsqueda simplificada para estate.property -->
-    <record id="view_estate_property_search_basic" model="ir.ui.view">
-        <field name="name">estate.property.search.basic</field>
-        <field name="model">estate.property</field>
+    <!-- Action -->
+    <record id="action_estate_property_type" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_estate_property_type" 
+              name="Property Types" 
+              parent="menu_estate_root" 
+              action="action_estate_property_type"/>
+
+    <!-- Tree View -->
+    <record id="view_estate_property_type_tree" model="ir.ui.view">
+        <field name="name">estate.property.type.tree</field>
+        <field name="model">estate.property.type</field>
         <field name="arch" type="xml">
-            <search string="Search Properties">
+            <tree>
                 <field name="name"/>
-                <field name="selling_price"/>
-                <field name="date_availability"/>
-                <field name="bedrooms"/>
-                <field name="postcode"/>
-            </search>
+            </tree>
         </field>
     </record>
 
-    <!-- Acción actualizada para el modelo estate.property -->
-    <record id="action_estate_property" model="ir.actions.act_window">
-        <field name="name">Real Estate Properties</field>
-        <field name="res_model">estate.property</field>
-        <field name="view_mode">tree,form</field>
-        <field name="views" eval="[(ref('view_estate_property_tree'), 'tree'), (ref('view_estate_property_form'), 'form'), (ref('view_estate_property_search_basic'), 'search')]"/>
+    <!-- Form View -->
+    <record id="view_estate_property_type_form" model="ir.ui.view">
+        <field name="name">estate.property.type.form</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
 </odoo>
