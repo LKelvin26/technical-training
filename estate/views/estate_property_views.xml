@@ -1,42 +1,17 @@
 <odoo>
-    <!-- Acción para abrir el formulario -->
-    <record id="action_test_model_form" model="ir.actions.act_window">
-        <field name="name">Test Model Form</field>
-        <field name="res_model">test.model</field>
-        <field name="view_mode">form</field>
-        <field name="target">current</field>
-    </record>
-
-    <!-- Vista de formulario -->
-    <record id="view_test_model_form" model="ir.ui.view">
-        <field name="name">test.model.form</field>
-        <field name="model">test.model</field>
+    <!-- Vista de lista para estate.property -->
+    <record id="view_estate_property_tree" model="ir.ui.view">
+        <field name="name">estate.property.tree</field>
+        <field name="model">estate.property</field>
         <field name="arch" type="xml">
-            <form string="Test Model">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="description"/>
-                        <field name="postcode"/>
-                        <field name="date_availability"/>
-                        <field name="expected_price"/>
-                        <field name="selling_price"/>
-                    </group>
-                    <group>
-                        <field name="bedrooms"/>
-                        <field name="living_area"/>
-                        <field name="facades"/>
-                        <field name="garage"/>
-                        <field name="garden_area"/>
-                        <field name="garden_orientation"/>
-                        <field name="status"/>
-                    </group>
-                </sheet>
-            </form>
+            <tree string="Properties">
+                <field name="name"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/>
+                <field name="bedrooms"/>
+                <field name="postcode"/>
+                <!-- Agrega más campos si es necesario -->
+            </tree>
         </field>
     </record>
-
-    <!-- Menú para acceder al formulario -->
-    <menuitem id="test_menu_root" name="Test"/>
-    <menuitem id="test_model_menu_form" parent="test_menu_root" name="Formulario Test Model" action="action_test_model_form"/>
 </odoo>
