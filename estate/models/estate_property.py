@@ -2,27 +2,9 @@ from odoo import models, fields
 
 class EstateProperty(models.Model):
     _name = 'estate.property'
-    _description = 'Descripción de Mi Modelo'
+    _description = 'Real Estate Property'
 
-    name = fields.Char(string='Nombre')
-    description = fields.Text(string='Descripción')
-    postcode = fields.Char(string='Código Postal')
-    date_availability = fields.Date(string='Fecha de Disponibilidad',default=fields.Datetime.now)
-    expected_price = fields.Float(string='Precio Esperado')
-    selling_price = fields.Float(string='Precio de Venta')
-    bedrooms = fields.Integer(string='Número de Habitaciones',default=2)
-    living_area = fields.Integer(string='Área de Estar')
-    facades = fields.Integer(string='Número de Fachadas')
-    garage = fields.Boolean(string='Garage')
-    garden_area = fields.Integer(string='Área del Jardín')
-    garden_orientation = fields.Selection([
-        ('north', 'Norte'),
-        ('south', 'Sur'),
-        ('east', 'Este'),
-        ('west', 'Oeste')
-    ], string='Orientación del Jardín')
-    status = fields.Selection([
-    ('new', 'Nueva'),
-    ('confirmed', 'Confirmada'),
-    ('canceled', 'Cancelada')
-], string='Estatus', required=True, default='new', copy=False)
+    name = fields.Char(string='Title', required=True)
+    selling_price = fields.Float(string='Selling Price', readonly=True, copy=False)
+    date_availability = fields.Date(string='Availability Date', copy=False, default=lambda self: fields.Date.today() + timedelta(days=90))
+    bedrooms = fields.Integer(string='Bedrooms', default=2)
