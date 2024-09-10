@@ -13,6 +13,16 @@
               parent="menu_estate_root" 
               action="action_estate_property_type"/>
 
+    <menuitem id="menu_estate_property_tree" 
+              name="Property tree" 
+              parent="menu_estate_root" 
+              action="action_estate_property_tree"/>
+    
+    <menuitem id="menu_estate_property_type_form" 
+              name="Property form" 
+              parent="menu_estate_root" 
+              action="action_estate_property_type_form"/>
+
     <!-- Tree View for Property Type -->
     <record id="view_estate_property_type_tree" model="ir.ui.view">
         <field name="name">estate.property.type.tree</field>
