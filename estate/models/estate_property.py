@@ -4,6 +4,7 @@ from odoo import models, fields
 
 class EstateProperty(models.Model):
     _name = 'estate.property'
+    _inherit = 'estate.property'
     _description = 'Estate Property'
 
     name = fields.Char(string='Name')
@@ -24,3 +25,5 @@ class EstateProperty(models.Model):
     property_type_id = fields.Many2one('estate.property.type', string='Property Type')
     buyer_id = fields.Many2one('res.partner', string='Buyer')
     salesperson_id = fields.Many2one('res.users', string='Salesperson', default=lambda self: self.env.user)
+
+    tag_ids = fields.Many2many('estate.property.tag', string='Tags')
