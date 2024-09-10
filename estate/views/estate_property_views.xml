@@ -68,6 +68,7 @@
             </search>
         </field>
     </record>
+
     <!-- Acción para el modelo estate.property -->
     <record id="action_estate_property" model="ir.actions.act_window">
         <field name="name">Real Estate Properties</field>
