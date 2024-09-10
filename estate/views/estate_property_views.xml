@@ -1,55 +1,7 @@
 <odoo>
-    <!-- Vista de lista para estate.property -->
-    <record id="view_estate_property_tree" model="ir.ui.view">
-        <field name="name">estate.property.tree</field>
-        <field name="model">estate.property</field>
-        <field name="arch" type="xml">
-            <tree string="Properties">
-                <field name="name"/>
-                <field name="selling_price"/>
-                <field name="date_availability"/>
-                <field name="bedrooms"/>
-                <field name="postcode"/>
-            </tree>
-        </field>
-    </record>
-
-    <!-- Vista de formulario para estate.property -->
-    <record id="view_estate_property_form" model="ir.ui.view">
-        <field name="name">estate.property.form</field>
-        <field name="model">estate.property</field>
-        <field name="arch" type="xml">
-            <form string="Estate Property">
-                <sheet>
-                    <group>
-                        <group>
-                            <field name="name"/>
-                        </group>
-                        <group>
-                            <field name="selling_price"/>
-                        </group>
-                        <group>
-                            <field name="date_availability"/>
-                        </group>
-                        <group>
-                            <field name="bedrooms"/>
-                        </group>
-                        <group>
-                            <field name="postcode"/>
-                        </group>
-                        <group>
-                            <field name="state"/>
-                            <field name="active"/>
-                        </group>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <!-- Vista de búsqueda para estate.property -->
-    <record id="view_estate_property_search" model="ir.ui.view">
-        <field name="name">estate.property.search</field>
+    <!-- Vista de búsqueda simplificada para estate.property -->
+    <record id="view_estate_property_search_basic" model="ir.ui.view">
+        <field name="name">estate.property.search.basic</field>
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search string="Search Properties">
@@ -58,23 +10,15 @@
                 <field name="date_availability"/>
                 <field name="bedrooms"/>
                 <field name="postcode"/>
-                
-                <!-- Filtros -->
-                <filter name="filter_available" string="Available" domain="[('state', 'in', ['new', 'offer_received'])]"/>
-                <filter name="filter_sold" string="Sold" domain="[('state', '=', 'sold')]"/>
-                
-                <!-- Agrupación -->
-                <group by="postcode"/>
             </search>
         </field>
     </record>
 
-    <!-- Acción para el modelo estate.property -->
+    <!-- Acción actualizada para el modelo estate.property -->
     <record id="action_estate_property" model="ir.actions.act_window">
         <field name="name">Real Estate Properties</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="view_estate_property_search"/>
-        <field name="view_id" ref="view_estate_property_tree"/>
+        <field name="views" eval="[(ref('view_estate_property_tree'), 'tree'), (ref('view_estate_property_form'), 'form'), (ref('view_estate_property_search_basic'), 'search')]"/>
     </record>
 </odoo>
