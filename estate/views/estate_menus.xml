@@ -4,5 +4,5 @@
 
     <!-- Menú para acceder a la acción -->
   <!-- Menú para acceder a la lista y formulario -->
-    <menuitem id="menu_estate_properties" name="Properties" parent="menu_estate_root" action="action_estate_property_type" sequence="20"/>
+  
 </odoo>
