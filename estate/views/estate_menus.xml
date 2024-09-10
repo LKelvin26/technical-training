@@ -1,7 +1,7 @@
 <odoo>
     <!-- Menú raíz -->
-    <menuitem id="menu_estate_property_root" name="Real Estate" sequence="10"/>
+    <menuitem id="menu_estate_root" name="Real Estate" sequence="10"/>
 
     <!-- Menú para acceder a la acción -->
-    <menuitem id="menu_estate_property" name="Properties" parent="menu_estate_property_root" action="action_estate_property" sequence="20"/>
+    <menuitem id="menu_estate_properties" name="Properties" parent="menu_estate_root" action="action_estate_property" sequence="20"/>
 </odoo>
