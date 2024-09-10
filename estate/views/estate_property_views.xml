@@ -60,7 +60,7 @@
                 <field name="postcode"/>
                 
                 <!-- Filtros -->
-                <filter name="filter_available" string="Available" domain="[('date_availability', '>=', date.today())]"/>
+                <filter name="filter_available" string="Available" domain="[('date_availability', '>=', (context_today()))]"/>
                 <filter name="filter_sold" string="Sold" domain="[('state', '=', 'Sold')]"/>
                 
                 <!-- Agrupación -->
