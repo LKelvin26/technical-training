@@ -5,7 +5,7 @@
     "depends": ["base"],  # dependencies
     "data": [
         'security/ir.model.access.csv',
-        'views/mi_modelo_views.xml',
+        'views/estate_property_views.xml',
        
     ],
     "installable": True,
