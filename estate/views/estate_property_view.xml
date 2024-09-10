@@ -5,4 +5,8 @@
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
     </record>
+
+    <!-- Menú para acceder a la acción -->
+    <menuitem id="menu_estate_property_root" name="Real Estate" sequence="10"/>
+    <menuitem id="menu_estate_property" name="Properties" parent="menu_estate_property_root" action="action_estate_property" sequence="20"/>
 </odoo>
