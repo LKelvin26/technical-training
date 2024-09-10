@@ -9,7 +9,7 @@ class EstateProperty(models.Model):
     bedrooms = fields.Integer(string='Number of Bedrooms', default=2)
     date_availability = fields.Date(string='Date of Availability', default=lambda self: fields.Date.today() + timedelta(days=90))
     selling_price = fields.Float(string='Selling Price')
-
+    postcode = fields.Integer(string="Post Code")
     # Campos reservados
     active = fields.Boolean(string='Active', default=True)
     state = fields.Selection([
