@@ -1,27 +1,32 @@
 <odoo>
-    <!-- Action -->
+    <!-- Action for Property Type -->
     <record id="action_estate_property_type" model="ir.actions.act_window">
         <field name="name">Property Types</field>
         <field name="res_model">estate.property.type</field>
         <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_estate_property_type_tree"/>
     </record>
 
-    <!-- Menu -->
+    <!-- Action for Estate Property -->
+    <record id="action_estate_property" model="ir.actions.act_window">
+        <field name="name">Estate Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_estate_property_tree"/>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_estate_root" name="Estate" sequence="10"/>
 
     <menuitem id="menu_estate_property_type" 
               name="Property Types" 
               parent="menu_estate_root" 
               action="action_estate_property_type"/>
 
-    <menuitem id="menu_estate_property_tree" 
-              name="Property tree" 
+    <menuitem id="menu_estate_property" 
+              name="Estate Properties" 
               parent="menu_estate_root" 
-              action="action_estate_property_tree"/>
-    
-    <menuitem id="menu_estate_property_type_form" 
-              name="Property form" 
-              parent="menu_estate_root" 
-              action="action_estate_property_type_form"/>
+              action="action_estate_property"/>
 
     <!-- Tree View for Property Type -->
     <record id="view_estate_property_type_tree" model="ir.ui.view">
