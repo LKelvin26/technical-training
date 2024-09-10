@@ -4,4 +4,5 @@
 
     <!-- Menú para acceder a la acción -->
     <menuitem id="menu_estate_properties" name="Properties" parent="menu_estate_root" action="action_estate_property" sequence="20"/>
+    <menuitem id="menu_estate_property_tree" name="Properties" parent="menu_estate_root" action="action_estate_property" sequence="20"/>
 </odoo>
