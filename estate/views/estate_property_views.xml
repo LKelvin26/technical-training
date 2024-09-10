@@ -61,7 +61,7 @@
                 
                 <!-- Filtros -->
                 <filter name="filter_available" string="Available" domain="[('date_availability', '>=', (context_today()))]"/>
-                <filter name="filter_sold" string="Sold" domain="[('state', '=', 'Sold')]"/>
+                <filter name="filter_sold" string="Sold" domain="[('state', '=', 'sold')]"/>
                 
                 <!-- Agrupación -->
                 <group by="postcode"/>
@@ -74,7 +74,6 @@
         <field name="name">Real Estate Properties</field>
         <field name="res_model">estate.property</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_estate_property_tree"/>
         <field name="search_view_id" ref="view_estate_property_search"/>
     </record>
 </odoo>
