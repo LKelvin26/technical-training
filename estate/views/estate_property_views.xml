@@ -1,11 +1,5 @@
 <odoo>
-    <!-- Acción para el modelo estate.property -->
-    <record id="action_estate_property" model="ir.actions.act_window">
-        <field name="name">Real Estate Properties</field>
-        <field name="res_model">estate.property</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
+    
     <!-- Vista de lista para estate.property -->
     <record id="view_estate_property_tree" model="ir.ui.view">
         <field name="name">estate.property.tree</field>
@@ -53,4 +47,12 @@
             </form>
         </field>
     </record>
+
+    <!-- Acción para el modelo estate.property -->
+    <record id="action_estate_property" model="ir.actions.act_window">
+        <field name="name">Real Estate Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 </odoo>
