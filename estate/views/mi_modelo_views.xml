@@ -1,0 +1,19 @@
+<odoo>
+    <!-- Menú Principal -->
+    <menuitem id="menu_mi_modelo_root" name="Mi Modelo" sequence="10"/>
+
+    <!-- Submenú -->
+    <menuitem id="menu_mi_modelo_items" name="Items" parent="menu_mi_modelo_root" action="action_mi_modelo_items" sequence="10"/>
+
+    <!-- Acción que enlaza al modelo -->
+    <record id="action_mi_modelo_items" model="ir.actions.act_window">
+        <field name="name">Items</field>
+        <field name="res_model">mi.modelo</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Aquí puedes ver y gestionar los items de Mi Modelo.
+            </p>
+        </field>
+    </record>
+</odoo>
