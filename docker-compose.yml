@@ -1,6 +1,6 @@
 services:
   web:
-    image: odoo:16
+    image: odoo:15.0
     ports:
       - "8070:8069"  # Asegúrate de que el puerto 8070 no esté en uso
     volumes:
